@@ -10,3 +10,9 @@ grep -r -l "require('inherits')" * | grep -v build.sh | grep -v node_modules | x
 
 # replace the inherit import by just util.inherits
 grep -r -l "require('util-deprecate')" * | grep -v build.sh | grep -v node_modules | xargs sed -i '' "s/require('util-deprecate')/require('util')\.deprecate/g"
+
+# replace the internal require by events
+grep -r -l "require('./internal/streams/stream')" * | grep -v build.sh | grep -v node_modules | xargs sed -i '' "s/require('\.\/internal\/streams\/stream')/require('events')/g"
+
+# replace the global. by nothing
+grep -r -l "global." * | grep -v build.sh | grep -v node_modules | xargs sed -i '' "s/global\.//g"
