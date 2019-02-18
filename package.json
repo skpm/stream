@@ -1,6 +1,6 @@
 {
   "name": "@skpm/stream",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A drop-in replacement for the stream NodeJS package",
   "main": "index.js",
   "scripts": {
